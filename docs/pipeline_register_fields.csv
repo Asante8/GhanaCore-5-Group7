@@ -1,0 +1,41 @@
+register,total_width,packed_bits,width,signal,contents
+IF_ID,65,64,1,IFID_Valid,Instruction or bubble marker
+IF_ID,65,63:32,32,IFID_PC,Instruction word address
+IF_ID,65,31:0,32,IFID_Instruction,Encoded 32-bit instruction
+ID_EX,157,156,1,IDEX_Valid,Instruction or bubble marker
+ID_EX,157,155:124,32,IDEX_PC,Instruction word address
+ID_EX,157,123:92,32,IDEX_Rs1Value,Register-file read port A
+ID_EX,157,91:60,32,IDEX_Rs2Value,Register-file read port B/store data
+ID_EX,157,59:28,32,IDEX_Immediate,Sign-extended imm18
+ID_EX,157,27:24,4,IDEX_Rd,Destination register
+ID_EX,157,23:20,4,IDEX_Rs1,Source 1 register number
+ID_EX,157,19:16,4,IDEX_Rs2,Source 2/store register number
+ID_EX,157,15:10,6,IDEX_Opcode,Original opcode
+ID_EX,157,9,1,IDEX_RegWrite,Register write control
+ID_EX,157,8,1,IDEX_MemRead,Memory read control
+ID_EX,157,7,1,IDEX_MemWrite,Memory write control
+ID_EX,157,6,1,IDEX_MemToReg,WB data mux control
+ID_EX,157,5,1,IDEX_ALUSrcImm,ALU source B mux control
+ID_EX,157,4,1,IDEX_Branch,Branch instruction control
+ID_EX,157,3,1,IDEX_BranchNE,BNE polarity control
+ID_EX,157,2:0,3,IDEX_ALUOp,ALU operation code
+EX_MEM,145,144,1,EXMEM_Valid,Instruction or bubble marker
+EX_MEM,145,143:112,32,EXMEM_PC,Originating instruction address
+EX_MEM,145,111:106,6,EXMEM_Opcode,Original opcode
+EX_MEM,145,105:74,32,EXMEM_ALUResult,Arithmetic result or memory word address
+EX_MEM,145,73:42,32,EXMEM_StoreData,Data written by SW
+EX_MEM,145,41:38,4,EXMEM_Rd,Destination register
+EX_MEM,145,37,1,EXMEM_CompareEqual,Source equality result
+EX_MEM,145,36,1,EXMEM_BranchTaken,Resolved branch decision
+EX_MEM,145,35:4,32,EXMEM_BranchTarget,Resolved PC word address
+EX_MEM,145,3,1,EXMEM_RegWrite,Register write control
+EX_MEM,145,2,1,EXMEM_MemRead,Memory read control
+EX_MEM,145,1,1,EXMEM_MemWrite,Memory write control
+EX_MEM,145,0,1,EXMEM_MemToReg,WB data mux control
+MEM_WB,77,76,1,MEMWB_Valid,Instruction or bubble marker
+MEM_WB,77,75:70,6,MEMWB_Opcode,Original opcode
+MEM_WB,77,69:38,32,MEMWB_MemoryData,Loaded memory word
+MEM_WB,77,37:6,32,MEMWB_ALUResult,ALU result
+MEM_WB,77,5:2,4,MEMWB_Rd,Destination register
+MEM_WB,77,1,1,MEMWB_RegWrite,Register-file write enable control
+MEM_WB,77,0,1,MEMWB_MemToReg,WB data mux select
