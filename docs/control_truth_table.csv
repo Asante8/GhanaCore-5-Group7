@@ -1,0 +1,14 @@
+mnemonic,opcode_hex,valid,reg_write,mem_read,mem_write,mem_to_reg,alu_src_imm,branch,branch_not_equal,alu_op_binary,alu_op_name
+NOP,0x00,1,0,0,0,0,0,0,0,110,PASS
+ADD,0x01,1,1,0,0,0,0,0,0,000,ADD
+SUB,0x02,1,1,0,0,0,0,0,0,001,SUB
+AND,0x03,1,1,0,0,0,0,0,0,010,AND
+OR,0x04,1,1,0,0,0,0,0,0,011,OR
+XOR,0x05,1,1,0,0,0,0,0,0,100,XOR
+SLT,0x06,1,1,0,0,0,0,0,0,101,SLT
+ADDI,0x08,1,1,0,0,0,1,0,0,000,ADD
+LW,0x10,1,1,1,0,1,1,0,0,000,ADD
+SW,0x11,1,0,0,1,0,1,0,0,000,ADD
+BEQ,0x18,1,0,0,0,0,0,1,0,001,SUB
+BNE,0x19,1,0,0,0,0,0,1,1,001,SUB
+RESERVED,other,0,0,0,0,0,0,0,0,110,PASS
