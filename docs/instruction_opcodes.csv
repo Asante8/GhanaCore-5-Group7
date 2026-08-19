@@ -1,0 +1,13 @@
+mnemonic,opcode_binary,opcode_hex,format,rd_or_rs2_bits,rs1_bits,rs2_or_immediate_bits,operation
+NOP,000000,0x00,N,zero,zero,zero,No operation
+ADD,000001,0x01,R,rd[25:22],rs1[21:18],rs2[17:14],rd=rs1+rs2
+SUB,000010,0x02,R,rd[25:22],rs1[21:18],rs2[17:14],rd=rs1-rs2
+AND,000011,0x03,R,rd[25:22],rs1[21:18],rs2[17:14],Bitwise AND
+OR,000100,0x04,R,rd[25:22],rs1[21:18],rs2[17:14],Bitwise OR
+XOR,000101,0x05,R,rd[25:22],rs1[21:18],rs2[17:14],Bitwise XOR
+SLT,000110,0x06,R,rd[25:22],rs1[21:18],rs2[17:14],Signed less-than
+ADDI,001000,0x08,I,rd[25:22],rs1[21:18],imm18[17:0],Add signed immediate
+LW,010000,0x10,I,rd[25:22],base[21:18],offset18[17:0],Load word
+SW,010001,0x11,S,value_rs2[25:22],base[21:18],offset18[17:0],Store word
+BEQ,011000,0x18,B,rs2[25:22],rs1[21:18],pc_relative18[17:0],Branch if equal
+BNE,011001,0x19,B,rs2[25:22],rs1[21:18],pc_relative18[17:0],Branch if not equal
